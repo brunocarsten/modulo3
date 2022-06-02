@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react'
 import { Container } from '../components/layout/Container'
 import { Header } from '../components/layout/Header'
 import { NavButton } from '../components/layout/NavButton'
+import { useLocation } from 'react-router-dom'
 
 import imgdir from '../assets/popup amarelo dir.png'
 import imgesq from '../assets/popup amarelo esq.png'
@@ -53,43 +55,49 @@ const style = {
 }
 
 export const PopupAcerto = () => {
-  let link = '/roleta'
+  const location = useLocation()
+  const [link, setLink] = useState('/roleta')
+
   function handleAnswer() {
     const itemsDone = JSON.parse(localStorage.getItem('progress'))
     if (itemsDone) {
       if (itemsDone.length >= 8) {
-        link = '/contagem'
+        setLink('/contagem')
       }
     }
   }
-  return(
-  <>
-    <Header></Header>
-    <Container>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'calc(100vh - 83px)' }}>
-        <div className="popup" style={style.main}>
-          <div className="bkgesq" style={style.bkg}>
-            <img src={imgesq} alt="" />
-          </div>
-          <div className="content" style={style.content}>
-            
-            <h1 style={style.title}>MUITO BEM, VOCÊ ACERTOU!</h1>
-            <p style={style.text}>Liberdade e respeito pelos costumes são característica do povo cigano.</p>
-            <NavButton
-              onLoad = {handleAnswer()}
-              label="AVANÇAR"
-              url={link}
-              style={{ width: 264, marginTop: 20, background: '#3DC2EA', color: '#FFF', maxWidth: '100%' }}
-            >
-              AVANÇAR
-            </NavButton>
-          </div>
-          <div className="bkgdir" style={style.bkg}>
-            <img src={imgdir} alt="" />
+
+  useEffect(() => {
+    handleAnswer()
+  }, [])
+
+  return (
+    <>
+      <Header></Header>
+      <Container>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 'calc(100vh - 83px)' }}>
+          <div className="popup" style={style.main}>
+            <div className="bkgesq" style={style.bkg}>
+              <img src={imgesq} alt="" />
+            </div>
+            <div className="content" style={style.content}>
+              <h1 style={style.title}>MUITO BEM, VOCÊ ACERTOU!</h1>
+              {location.state && <p style={style.text}>{location.state.message}</p>}
+
+              <NavButton
+                label="AVANÇAR"
+                url={link}
+                style={{ width: 264, marginTop: 20, background: '#3DC2EA', color: '#FFF', maxWidth: '100%' }}
+              >
+                AVANÇAR
+              </NavButton>
+            </div>
+            <div className="bkgdir" style={style.bkg}>
+              <img src={imgdir} alt="" />
+            </div>
           </div>
         </div>
-      </div>
-    </Container>
-  </>
+      </Container>
+    </>
   )
 }

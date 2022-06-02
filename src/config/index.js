@@ -12,8 +12,7 @@ export const questions = [
   {
     index: 0,
     title: 'PERGUNTA 1',
-    question:
-      'Sobre povos e comunidades ciganas, é correto afirmar que:',
+    question: 'Sobre povos e comunidades ciganas, é correto afirmar que:',
     alternatives: [
       {
         correct: true,
@@ -32,13 +31,13 @@ export const questions = [
         text: 'Ciganos são povos homogêneos, de mesma origem e língua.'
       }
     ],
-    image: image1
+    image: image1,
+    message: 'Liberdade e respeito pelos costumes são característica do povo cigano.'
   },
   {
     index: 1,
     title: 'PERGUNTA 2',
-    question:
-      'Sobre a infância nos povos e nas comunidades tradicionais ciganas, é incorreto afirmar que:',
+    question: 'Sobre a infância nos povos e nas comunidades tradicionais ciganas, é incorreto afirmar que:',
     alternatives: [
       {
         correct: false,
@@ -57,13 +56,14 @@ export const questions = [
         text: 'Crianças ciganas não costumam frequentar a escola devido ao estilo de vida itinerante da comunidade. '
       }
     ],
-    image: image2
+    image: image2,
+    message:
+      'Mesmo com um estilo de vida itinerante, as crianças ciganas devem ir para a escola. As comunidades se mantêm fixas durante os períodos letivos e se deslocam nas férias.'
   },
   {
     index: 2,
     title: 'PERGUNTA 3',
-    question:
-      'Sobre a infância nos povos e nas comunidades tradicionais indígenas, é incorreto afirmar que:',
+    question: 'Sobre a infância nos povos e nas comunidades tradicionais indígenas, é incorreto afirmar que:',
     alternatives: [
       {
         correct: false,
@@ -82,7 +82,9 @@ export const questions = [
         text: 'Quando uma criança nasce, ela é cuidada e educada por toda a comunidade, sendo que seu aprendizado se dá por meio da participação nas atividades e nos rituais realizados pelo grupo. Nesse ciclo, a criança aprende primeiramente a língua materna, e, muitas vezes, suas mães não falam português.'
       }
     ],
-    image: image3
+    image: image3,
+    message:
+      'No Brasil existem cerca de 300 etnias indígenas diferentes, com crenças, costumes e línguas distintas uns dos outros. Diversidade é a marca!'
   },
   {
     index: 3,
@@ -107,13 +109,13 @@ export const questions = [
         text: 'Todas as alternativas estão corretas.'
       }
     ],
-    image: image4
+    image: image4,
+    message: 'Essas são características-chave da infância em comunidades indígenas.'
   },
   {
     index: 4,
     title: 'PERGUNTA 5',
-    question:
-      'Sobre a infância nos povos e nas comunidades quilombolas, é incorreto afirmar que:',
+    question: 'Sobre a infância nos povos e nas comunidades quilombolas, é incorreto afirmar que:',
     alternatives: [
       {
         correct: false,
@@ -132,13 +134,13 @@ export const questions = [
         text: 'Crianças quilombolas costumam produzir brinquedos com tecidos, chitas e sementes.'
       }
     ],
-    image: image5
+    image: image5,
+    message: 'Comunidades quilombolas utilizam os espaços de maneira coletiva e comunitária.'
   },
   {
     index: 5,
     title: 'PERGUNTA 6',
-    question:
-      'Sobre a infância nos povos e nas comunidades quilombolas, é possível afirmar:',
+    question: 'Sobre a infância nos povos e nas comunidades quilombolas, é possível afirmar:',
     alternatives: [
       {
         correct: false,
@@ -157,13 +159,13 @@ export const questions = [
         text: 'Crianças não costumam frequentar escolas, visto que não existem escolas dentro dos territórios. '
       }
     ],
-    image: image6
+    image: image6,
+    message: 'A natureza é muito presente na infância em comunidades quilombolas.'
   },
   {
     index: 6,
     title: 'PERGUNTA 7',
-    question:
-      'Sobre povos de terreiro, é incorreto afirmar:',
+    question: 'Sobre povos de terreiro, é incorreto afirmar:',
     alternatives: [
       {
         correct: false,
@@ -182,13 +184,14 @@ export const questions = [
         text: 'Povos de terreiro estão principalmente localizados em contextos urbanos nas grandes cidades. '
       }
     ],
-    image: image7
+    image: image7,
+    message:
+      'Existem terreiros localizados em áreas rurais e em grandes cidades, mas mesmo em contextos urbanos, os rituais buscam conexão com a terra e utilizam alimentos que a natureza oferece.'
   },
   {
     index: 7,
     title: 'PERGUNTA 8',
-    question:
-      'Sobre a infância nos povos de terreiro, é incorreto afirmar:',
+    question: 'Sobre a infância nos povos de terreiro, é incorreto afirmar:',
     alternatives: [
       {
         correct: false,
@@ -207,6 +210,8 @@ export const questions = [
         text: 'Os terreiros costumam ter muito espaço para a participação e o protagonismo das crianças, e os mais velhos são responsáveis por cuidar, zelar e garantir a segurança de todas as crianças da comunidade.'
       }
     ],
-    image: image1
+    image: image1,
+    message:
+      'Os contos nas comunidades de terreiro possuem papel importante na formação e criação das crianças, ajudando e reforçando os costumes e as crenças desses povos.'
   }
 ]

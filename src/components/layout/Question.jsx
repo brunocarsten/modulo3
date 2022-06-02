@@ -7,15 +7,13 @@ import { Checkbox } from './Checkbox'
 import { ProgressContext } from '../../context/progress'
 import { questions } from '../../config'
 
-
 import overlay from '../../assets/overlay foto popup.png'
-
 
 export const Question = ({ ...props }) => {
   const { handleCurrentStep } = useContext(ProgressContext)
   const navigate = useNavigate()
   const { bkg, src, item } = props
-  const { alternatives, question, title, index } = item
+  const { alternatives, question, title, index, message } = item
 
   const [selected, setSelected] = useState(0)
 
@@ -29,7 +27,7 @@ export const Question = ({ ...props }) => {
     if (correct) {
       questions[index].done = true
       await handleCurrentStep()
-      navigate('/acerto')
+      navigate('/acerto', { state: { message } })
     } else {
       navigate('/erro')
     }
@@ -65,8 +63,10 @@ export const Question = ({ ...props }) => {
             style={{ marginBottom: 50, background: '#3DC2EA', color: '#FFF' }}
           />
         </div>
-        <div className="image" style={{position: 'relative'}}>
-          <div className="overlay" style={{position: 'absolute', top: '0', left: '0', opacity: '0.75'}}><img src={overlay} alt="" /></div>
+        <div className="image" style={{ position: 'relative' }}>
+          <div className="overlay" style={{ position: 'absolute', top: '0', left: '0', opacity: '0.75' }}>
+            <img src={overlay} alt="" />
+          </div>
           <img src={src} alt="" />
         </div>
       </div>
