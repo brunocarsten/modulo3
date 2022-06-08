@@ -1,17 +1,20 @@
 import '../styles/question.scoped.scss'
 
-import { useNavigate } from 'react-router-dom'
-import { useContext, useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { useContext, useEffect, useState } from 'react'
 import { Button } from './Button'
 import { Checkbox } from './Checkbox'
 import { ProgressContext } from '../../context/progress'
 import { questions } from '../../config'
+import { shuffle } from '../../helpers/shuffle'
 
 import overlay from '../../assets/overlay foto popup.png'
 
 export const Question = ({ ...props }) => {
+  const [items, setItems] = useState([])
   const { handleCurrentStep } = useContext(ProgressContext)
   const navigate = useNavigate()
+  const location = useLocation()
   const { bkg, src, item } = props
   const { alternatives, question, title, index, message } = item
 
@@ -20,6 +23,14 @@ export const Question = ({ ...props }) => {
   const onChangeValue = (value) => {
     setSelected(value)
   }
+
+  useEffect(() => {
+    if (location.state) {
+      setItems(shuffle(alternatives))
+    } else {
+      setItems(alternatives)
+    }
+  }, [])
 
   const handleAnswer = async () => {
     const { correct } = selected
@@ -40,7 +51,7 @@ export const Question = ({ ...props }) => {
           <p>{title}</p>
           <p>{question}</p>
           <ul className="alternatives">
-            {alternatives.map((alternative, i) => {
+            {items.map((alternative, i) => {
               return (
                 <li key={i} className={`alternative ${selected.i === i ? 'active' : ''}`}>
                   <Checkbox

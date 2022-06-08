@@ -90,7 +90,7 @@ export const questions = [
     index: 3,
     title: 'PERGUNTA 4',
     question:
-      'A autora Antonella Tassinari  aponta aspectos sobre a concepção dos povos indígenas que caracterizam bem a infância nesses povos. A seguir assinale a alternativa correta:',
+      'Assinale a alternativa correta em relação aos povos indígenas que caracterizam bem a infância nesses povos:',
     alternatives: [
       {
         correct: false,
