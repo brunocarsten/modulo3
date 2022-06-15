@@ -1,11 +1,11 @@
 // image imports
-import image1 from '../assets/pergunta 1.png'
-import image2 from '../assets/pergunta 2.jpg'
-import image3 from '../assets/pergunta 3.jpg'
-import image4 from '../assets/pergunta 4.jpg'
-import image5 from '../assets/pergunta 5.jpg'
-import image6 from '../assets/pergunta 6.jpg'
-import image7 from '../assets/pergunta 7.jpg'
+const image1 = require('../assets/pergunta1.png')
+const image2 = require('../assets/pergunta2.jpg')
+const image3 = require('../assets/pergunta3.jpg')
+const image4 = require('../assets/pergunta4.jpg')
+const image5 = require('../assets/pergunta5.jpg')
+const image6 = require('../assets/pergunta6.jpg')
+const image7 = require('../assets/pergunta7.jpg')
 
 // questions
 export const questions = [
