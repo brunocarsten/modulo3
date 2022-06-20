@@ -19,7 +19,7 @@ function ProgressProvider({ children }) {
 
   useEffect(() => {
     if (doneItems != '') {
-      localStorage.setItem('progress', JSON.stringify(doneItems))
+      localStorage.setItem('modulo3', JSON.stringify(doneItems))
     }
   }, [doneItems])
 

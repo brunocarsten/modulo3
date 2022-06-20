@@ -59,7 +59,7 @@ export const PopupAcerto = () => {
   const [link, setLink] = useState('/roleta')
 
   function handleAnswer() {
-    const itemsDone = JSON.parse(localStorage.getItem('progress'))
+    const itemsDone = JSON.parse(localStorage.getItem('modulo3'))
     if (itemsDone) {
       if (itemsDone.length >= 8) {
         setLink('/contagem')
